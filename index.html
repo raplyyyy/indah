@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday, Indah 💜</title>
+    <meta name="description" content="A special birthday gift for Indah Fatyka Sari — with love." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Raleway:wght@300;400;500;600&family=Caveat:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ======== INTRO / CLICK TO ENTER OVERLAY ======== -->
+    <div id="introOverlay">
+        <canvas id="introCanvas"></canvas>
+        <div id="introContent">
+            <p class="intro-greeting">🌸 &nbsp; For Someone Special &nbsp; 🌸</p>
+            <h1 class="intro-name">Indah<br />Fatyka Sari</h1>
+            <p class="intro-sub">A little gift, made with all my heart 💜</p>
+            <button id="enterBtn">
+                <span class="enter-icon">▶</span>
+                <span>Open your gift</span>
+            </button>
+            <p class="intro-hint">🎵 Music will play when you enter</p>
+        </div>
+    </div>
+
+    <!-- Star canvas background -->
+    <canvas id="starCanvas"></canvas>
+
+    <!-- Floating hearts -->
+    <div id="floatingHearts" aria-hidden="true"></div>
+
+    <!-- ======== BACKGROUND MUSIC (LOML - Taylor Swift) ======== -->
+    <div id="musicBar">
+        <div id="musicInfo">
+            <span id="musicNote" class="music-note">🎵</span>
+            <span id="musicTitle">LOML &mdash; Taylor Swift</span>
+        </div>
+        <button id="muteBtn" title="Mute music">🔊 Now playing</button>
+        <iframe id="ytPlayer" class="visually-hidden"
+            src="https://www.youtube.com/embed/GZ4vaTRn0HU?autoplay=0&mute=0&loop=1&playlist=GZ4vaTRn0HU&enablejsapi=1"
+            allow="autoplay; encrypted-media" frameborder="0" aria-hidden="true"></iframe>
+    </div>
+
+    <!-- Custom cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Nav dots -->
+    <nav class="nav-dots" aria-label="Section navigation">
+        <button class="dot active" data-section="0" aria-label="Hero"></button>
+        <button class="dot" data-section="1" aria-label="Countdown"></button>
+        <button class="dot" data-section="2" aria-label="Love Letter"></button>
+        <button class="dot" data-section="3" aria-label="Memories"></button>
+        <button class="dot" data-section="4" aria-label="Playlist"></button>
+    </nav>
+
+    <!-- ======== HERO ======== -->
+    <section id="hero" class="section">
+        <div class="hero-content">
+            <p class="greeting">🌸 &nbsp; A Special Gift For You &nbsp; 🌸</p>
+            <h1 class="hero-name">Indah<br />Fatyka Sari</h1>
+            <p class="hero-subtitle">With every beat of my heart, across every mile between us</p>
+            <div class="scroll-hint">
+                <span>Scroll to explore</span>
+                <div class="scroll-arrow">↓</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== COUNTDOWN ======== -->
+    <section id="countdown" class="section">
+        <div class="section-content">
+            <h2 class="section-title fade-in">Your Special Day</h2>
+            <p class="section-subtitle fade-in" data-delay="150">Counting every second until your birthday begins ✨</p>
+
+            <div class="countdown-wrapper fade-in" data-delay="300">
+                <div class="countdown-container" id="countdownContainer">
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+
+                <div id="birthdayMsg" class="birthday-msg hidden">
+                    🎂 Happy Birthday, Sayang! 🎂
+                    <p class="birthday-msg-sub">Today is all about you — you are so loved ✨</p>
+                </div>
+            </div>
+
+            <p class="birthday-date fade-in" data-delay="500">21 March 2026</p>
+        </div>
+    </section>
+
+    <!-- ======== LOVE LETTER ======== -->
+    <section id="letter" class="section">
+        <div class="section-content">
+            <h2 class="section-title fade-in">A Letter For You</h2>
+            <p class="section-subtitle fade-in" data-delay="150">Written straight from my heart 💌</p>
+
+            <div class="letter-card fade-in" data-delay="300">
+                <div class="letter-stamp">💌</div>
+                <div class="letter-lines">
+                    <p class="letter-salutation">My dearest Indah, my lovely girlfriend.</p>
+
+                    <p class="letter-para">
+                        On this very special day, I want you to know that every single thought in my heart belongs to
+                        you. I know we are not together right now the miles between us feel wider than ever on days
+                        like this. But distance has never once stopped me from loving you completely. If anything, it
+                        has only made me fall even more deeply.
+                    </p>
+
+                    <p class="letter-para">
+                        You are the first thing I think of when I wake up, and the last thought I hold before I sleep.
+                        You are my favorite song on repeat, my warmth in the coldest nights, my light on my darkest
+                        days. Loving you, Sayang, is the easiest and most beautiful thing I have ever done.
+                    </p>
+
+                    <p class="letter-para">
+                        You bring so much joy into this world just by existing. Your smile could outshine every star in
+                        the sky trust me, I've checked. The way you laugh, the way you care, the way you love
+                        it takes my breath away, every single time.
+                    </p>
+
+                    <p class="letter-para">
+                        I wish I could be there to hold your hand today, to whisper <em>"Happy Birthday"</em> right
+                        into your ear, to see your eyes light up the way they do when you're happy. Since I can't be
+                        there just yet, please know this you are celebrated today, not just by me, but by the entire
+                        universe.
+                    </p>
+
+                    <p class="letter-para">
+                        You deserve every beautiful thing that life has to offer, Baby. Every wish, every dream, every
+                        little thing your heart desires. And I promise, with everything I have, that I'll keep showing
+                        up for you across every mile, every moment, every single day.
+                    </p>
+
+                    <p class="letter-para">
+                        Even though we always argue, even over the smallest things, I've never felt like it's something
+                        wrong. To me, it's just one of the ways we express and communicate our love for each other. It
+                        shows that we both care and want everything to work out. We're always trying our best to make
+                        things go well, and I think that's a good thing.
+                    </p>
+
+                    <p class="letter-para">
+                        And I also want to apologize because during our time together, I haven't been able to fully
+                        understand your feelings. I still often forget the little things you tell me, I sometimes forget
+                        our anniversary, and I often forget the promises I've made even the small ones. I'm also sorry
+                        that I haven't been able to trust you 100% yet. And please forgive me for the times when I still
+                        can't put my ego aside for you.
+                    </p>
+
+                    <p class="letter-para">
+                        Happy Birthday, my beautiful girl. I love you more than words, more than distance, more than
+                        time.
+                    </p>
+
+                    <p class="letter-closing">— I love you so muchh sayanggkuu 💜</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== OUR MEMORIES GALLERY ======== -->
+    <section id="memories" class="section">
+        <div class="section-content">
+            <h2 class="section-title fade-in">Top things that i love from you</h2>
+            <p class="section-subtitle fade-in" data-delay="150">Every moment with you is a treasure I hold dear ✨</p>
+
+            <div class="gallery-grid fade-in" data-delay="300">
+                <div class="photo-frame" style="--rotation: -3deg;">
+                    <div class="photo-inner">
+                        <img src="assets/sunset.png" alt="Memories 1" />
+                        <div class="photo-tape"></div>
+                    </div>
+                    <p class="photo-caption">“The photo of you that I think is the most beautiful.”</p>
+                </div>
+                <div class="photo-frame" style="--rotation: 2deg; transition-delay: 0.1s;">
+                    <div class="photo-inner">
+                        <img src="assets/flowers.png" alt="Memories 2" />
+                        <div class="photo-tape"></div>
+                    </div>
+                    <p class="photo-caption">Your face when you’re teasing me.</p>
+                </div>
+                <div class="photo-frame" style="--rotation: -1.5deg; transition-delay: 0.2s;">
+                    <div class="photo-inner">
+                        <img src="assets/stars.png" alt="Memories 3" />
+                        <div class="photo-tape"></div>
+                    </div>
+                    <p class="photo-caption">Your cute antics always make me laugh.</p>
+                </div>
+                <div class="photo-frame" style="--rotation: 4deg; transition-delay: 0.3s;">
+                    <div class="photo-inner">
+                        <img src="assets/cozy.png" alt="Memories 4" />
+                        <div class="photo-tape"></div>
+                    </div>
+                    <p class="photo-caption">That smile is what makes me fall in love again and again.</p>
+                </div>
+            </div>
+
+            <p class="gallery-hint fade-in" data-delay="500">I can't wait to add more real photos of us here 💜</p>
+        </div>
+    </section>
+
+    <!-- ======== PLAYLIST ======== -->
+    <section id="playlist" class="section">
+        <div class="section-content">
+            <h2 class="section-title fade-in">Your Playlist 🎵</h2>
+            <p class="section-subtitle fade-in" data-delay="150">Songs that remind me of you — play them today 🎧</p>
+
+            <div class="playlist-grid fade-in" data-delay="300">
+
+                <!-- One Direction -->
+                <a class="song-card" id="song1"
+                    href="https://www.youtube.com/results?search_query=One+Direction+Little+Things" target="_blank"
+                    rel="noopener">
+                    <div class="song-art" style="background: linear-gradient(135deg, #3B82F6, #6366F1);">1D</div>
+                    <div class="song-info">
+                        <p class="song-title">Little Things</p>
+                        <p class="song-artist">One Direction</p>
+                        <p class="song-tag">💙 Romantic</p>
+                    </div>
+                    <div class="song-play">▶ Play</div>
+                </a>
+
+                <a class="song-card" id="song2"
+                    href="https://www.youtube.com/results?search_query=One+Direction+Story+of+My+Life" target="_blank"
+                    rel="noopener">
+                    <div class="song-art" style="background: linear-gradient(135deg, #6366F1, #8B5CF6);">1D</div>
+                    <div class="song-info">
+                        <p class="song-title">Story of My Life</p>
+                        <p class="song-artist">One Direction</p>
+                        <p class="song-tag">💜 Heartfelt</p>
+                    </div>
+                    <div class="song-play">▶ Play</div>
+                </a>
+
+                <!-- LANY -->
+                <a class="song-card" id="song3" href="https://www.youtube.com/results?search_query=LANY+ILYSB"
+                    target="_blank" rel="noopener">
+                    <div class="song-art" style="background: linear-gradient(135deg, #A855F7, #EC4899);">LA</div>
+                    <div class="song-info">
+                        <p class="song-title">ILYSB</p>
+                        <p class="song-artist">LANY</p>
+                        <p class="song-tag">🩷 Sweet</p>
+                    </div>
+                    <div class="song-play">▶ Play</div>
+                </a>
+
+                <a class="song-card" id="song4"
+                    href="https://www.youtube.com/results?search_query=Taylor+Swift+Exile+Bon+Iver" target="_blank"
+                    rel="noopener">
+                    <div class="song-art" style="background: linear-gradient(135deg, #818CF8, #6366F1);">TS</div>
+                    <div class="song-info">
+                        <p class="song-title">exile</p>
+                        <p class="song-artist">Taylor Swift ft. Bon Iver</p>
+                        <p class="song-tag">🌙 Cinematic</p>
+                    </div>
+                    <div class="song-play">▶ Play</div>
+                </a>
+
+                <!-- Taylor Swift -->
+                <a class="song-card" id="song5" href="https://www.youtube.com/results?search_query=Taylor+Swift+Lover"
+                    target="_blank" rel="noopener">
+                    <div class="song-art" style="background: linear-gradient(135deg, #F472B6, #FB7185);">TS</div>
+                    <div class="song-info">
+                        <p class="song-title">Lover</p>
+                        <p class="song-artist">Taylor Swift</p>
+                        <p class="song-tag">🌟 Dreamy</p>
+                    </div>
+                    <div class="song-play">▶ Play</div>
+                </a>
+
+                <a class="song-card" id="song6"
+                    href="https://www.youtube.com/results?search_query=Taylor+Swift+Enchanted" target="_blank"
+                    rel="noopener">
+                    <div class="song-art" style="background: linear-gradient(135deg, #FB7185, #F97316);">TS</div>
+                    <div class="song-info">
+                        <p class="song-title">Enchanted</p>
+                        <p class="song-artist">Taylor Swift</p>
+                        <p class="song-tag">✨ Magical</p>
+                    </div>
+                    <div class="song-play">▶ Play</div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer id="footer">
+        <div class="footer-content fade-in">
+            <p class="footer-msg">Happy Birthday, Sayang 🎂</p>
+            <p class="footer-sub">Made with all my love, just for you 💜</p>
+            <div class="footer-hearts">💙 💜 🩷</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
